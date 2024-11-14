@@ -8,7 +8,7 @@ const Create_Product_Service = async (data: Create_Product_Type) => {
 
     const entityManager = getManager();
     // insert data to database 
-    const newUser = await entityManager.insert(Product_Entity, {
+    const newProduct = await entityManager.insert(Product_Entity, {
         name: data.name,
         image: data.image,
         description: data.description,
@@ -16,7 +16,7 @@ const Create_Product_Service = async (data: Create_Product_Type) => {
         category:data.category
     })
 
-    return newUser;
+    return newProduct;
 }
 
 const Update_Product_Service = async (data: Partial<Create_Product_Type>, pid: string) => {

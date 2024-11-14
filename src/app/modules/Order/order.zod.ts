@@ -14,7 +14,6 @@ export const Order_Zod_Type = z.object({
 
 export const Update_Order_Zod_Type = z.object({
     body: z.object({
-        user_id: z.number().optional(),
         product_id: z.number().optional(),
         quantity: z.number().optional(),
     })

@@ -10,6 +10,7 @@ import { User_Entity } from "./Entity/User_Entity";
 import Global_Error_Handler from "./error/Global_Error_Handler";
 import { Product_Entity } from "./Entity/Product_Entity";
 import { Order_Entity } from "./Entity/Order_Entity";
+import { Category_Entity } from "./Entity/Category_Entity";
 
 
 const app = express();
@@ -25,10 +26,10 @@ createConnection({
     port: 3307,
     username: "root",
     password: "",
-    database: "market_nest", 
+    database: "market_nest",
     synchronize: true,
     logging: true,
-    entities: [User_Entity,Product_Entity,Order_Entity]
+    entities: [User_Entity, Product_Entity, Order_Entity, Category_Entity]
 }).then(() => {
     console.log("Databse connected successfully !");
 }).catch((err) => {
@@ -39,14 +40,19 @@ createConnection({
 // project route
 app.use('/app/v1', router);
 
-app.use('/',(req:Request,res:Response,next:NextFunction)=>{
+
+
+
+app.use('/', (req: Request, res: Response, next: NextFunction) => {
     res.status(httpStatus.OK).json({
-        success:true,
-        message:"Market Nest Server is running 🤩"
+        success: true,
+        message: "Market Nest Server is running 🤩"
     })
 })
 
-app.use("*",Route_Not_Found_Error);
+
+
+app.use("*", Route_Not_Found_Error);
 app.use(Global_Error_Handler);
 
 
