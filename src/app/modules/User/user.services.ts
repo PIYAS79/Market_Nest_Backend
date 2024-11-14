@@ -12,7 +12,6 @@ const Create_User_Service = async (data: Create_User_Type) => {
         email: data.email,
         password: data.password,
         role: "USER",
-
     })
 
     return newUser;

@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cors());
 
 
-createConnection({
+export const db_connection = createConnection({
     type: "mysql",
     host: "localhost",
     port: 3307,
@@ -28,7 +28,7 @@ createConnection({
     password: "",
     database: "market_nest",
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [User_Entity, Product_Entity, Order_Entity, Category_Entity]
 }).then(() => {
     console.log("Databse connected successfully !");
