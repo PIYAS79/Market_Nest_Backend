@@ -9,6 +9,7 @@ import router from './routes';
 import { User_Entity } from "./Entity/User_Entity";
 import Global_Error_Handler from "./error/Global_Error_Handler";
 import { Product_Entity } from "./Entity/Product_Entity";
+import { Order_Entity } from "./Entity/Order_Entity";
 
 
 const app = express();
@@ -27,7 +28,7 @@ createConnection({
     database: "market_nest", 
     synchronize: true,
     logging: true,
-    entities: [User_Entity,Product_Entity]
+    entities: [User_Entity,Product_Entity,Order_Entity]
 }).then(() => {
     console.log("Databse connected successfully !");
 }).catch((err) => {

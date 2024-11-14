@@ -3,7 +3,7 @@
 import { EntitySchema } from 'typeorm';
 
 
-interface Product_Entity_Type {
+export interface Product_Entity_Type {
     product_id: number,
     name: string,
     description: string,
