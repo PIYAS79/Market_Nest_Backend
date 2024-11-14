@@ -1,6 +1,6 @@
 
-
 import { EntitySchema } from 'typeorm';
+
 
 
 export interface Product_Entity_Type {
@@ -35,5 +35,5 @@ export const Product_Entity = new EntitySchema<Product_Entity_Type>({
         category: {
             type: String
         }
-    }
+    },
 })

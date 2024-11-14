@@ -2,18 +2,16 @@ import { getManager } from "typeorm";
 import { Product_Entity } from "../../Entity/Product_Entity";
 
 
-
-
 const Create_Product_Service = async (data: Create_Product_Type) => {
 
     const entityManager = getManager();
-    // insert data to database 
+
     const newProduct = await entityManager.insert(Product_Entity, {
         name: data.name,
         image: data.image,
         description: data.description,
         price: data.price,
-        category:data.category
+        category: data.category
     })
 
     return newProduct;

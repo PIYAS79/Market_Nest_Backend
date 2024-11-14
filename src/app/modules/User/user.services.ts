@@ -10,13 +10,19 @@ const Create_User_Service = async (data: Create_User_Type) => {
         name: data.name,
         image: data.image,
         email: data.email,
-        password: data.password
+        password: data.password,
+        role: "USER",
+
     })
 
     return newUser;
 }
 
 const Update_User_Service = async (data: Partial<Create_User_Type>, uid: string) => {
+
+    if (data.role) {
+        data.role = "USER"
+    }
 
     const remainingProperties: Record<string, unknown> = { ...data };
     const entityManager = getManager();
