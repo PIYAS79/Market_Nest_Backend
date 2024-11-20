@@ -9,6 +9,7 @@ export interface Order_Entity_Type {
     time: Date;
     quantity: number;
     user_id: number;
+    order_status: boolean;
 }
 
 export const Order_Entity = new EntitySchema<Order_Entity_Type>({
@@ -27,6 +28,9 @@ export const Order_Entity = new EntitySchema<Order_Entity_Type>({
         },
         user_id: {
             type: Number
+        },
+        order_status: {
+            type: Boolean
         }
     },
     relations: {
@@ -34,7 +38,7 @@ export const Order_Entity = new EntitySchema<Order_Entity_Type>({
             type: "many-to-one",
             target: "User",
             joinColumn: { name: "user_id" },
-            eager: false
+            eager: true
         },
         product: {
             type: "many-to-one",

@@ -19,6 +19,8 @@ router.delete('/:oid', Order_Controller.Delete_Delete_Controller);
 router.get('/user/:uid', Order_Controller.Get_All_Order_Of_A_User_Controller);
 // get one order route
 router.get('/:oid', Order_Controller.Get_One_Order_Controller);
+// get all order 
+router.get('/',Order_Controller.Get_All_Order_Controller)
 
 
 

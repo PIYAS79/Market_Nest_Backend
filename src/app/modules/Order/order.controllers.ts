@@ -59,12 +59,22 @@ const Get_One_Order_Controller = Async_Catch(async (req: Request, res: Response,
     })
 })
 
+const Get_All_Order_Controller = Async_Catch(async (req: Request, res: Response, next: NextFunction) => {
+
+    const result = await Order_Services.Get_All_Order_Service();
+
+    res.status(httpStatus.OK).json({
+        success: true,
+        message: "Successfully Get All Order",
+        data: result
+    })
+})
 
 export const Order_Controller = {
     Create_Order_Controller,
     Update_Order_Controller,
     Delete_Delete_Controller,
     Get_All_Order_Of_A_User_Controller,
-    Get_One_Order_Controller
-
+    Get_One_Order_Controller,
+    Get_All_Order_Controller
 }

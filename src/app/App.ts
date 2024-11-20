@@ -11,22 +11,26 @@ import Global_Error_Handler from "./error/Global_Error_Handler";
 import { Product_Entity } from "./Entity/Product_Entity";
 import { Order_Entity } from "./Entity/Order_Entity";
 import { Category_Entity } from "./Entity/Category_Entity";
+import config from "./config";
 
 
 const app = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173'],
+    credentials: true
+}));
 
 
 export const db_connection = createConnection({
     type: "mysql",
-    host: "localhost",
-    port: 3307,
-    username: "root",
-    password: "",
-    database: "market_nest",
+    host: config.DB_HOST as string,
+    port: 3306,
+    username: config.DB_USER as string,
+    password: config.DB_PASSWORD as string,
+    database: config.DB_NAME as string,
     synchronize: true,
     logging: false,
     entities: [User_Entity, Product_Entity, Order_Entity, Category_Entity]

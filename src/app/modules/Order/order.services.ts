@@ -27,10 +27,12 @@ const Create_Order_Service = async (data: Create_Order_Type) => {
     const newOrder = entityManager.insert(Order_Entity, {
         product: product,
         quantity: data.quantity,
-        time: Get_Current_Date,
+        time: Get_Current_Date(),
         user: user,
-        user_id: data.user_id
+        user_id: data.user_id,
+        order_status: false
     })
+    console.log(newOrder)
 
     return newOrder;
 }
@@ -54,8 +56,8 @@ const Delete_Order_Service = async (pid: string) => {
 
 const Get_All_Order_Of_A_User_Service = async (user_id: string) => {
     const entityManager = getManager();
-    
-    const result = await entityManager.find(Order_Entity,{where:{user_id:Number(user_id)}});
+
+    const result = await entityManager.find(Order_Entity, { where: { user_id: Number(user_id) } });
 
     return result;
 };
@@ -67,6 +69,11 @@ const Get_One_Order_Service = async (pid: string) => {
     return result;
 }
 
+const Get_All_Order_Service = async () => {
+    const entityManager = getManager();
+    const result = await entityManager.find(Order_Entity);
+    return result;
+}
 
 
 export const Order_Services = {
@@ -74,5 +81,6 @@ export const Order_Services = {
     Update_Order_Service,
     Delete_Order_Service,
     Get_All_Order_Of_A_User_Service,
-    Get_One_Order_Service
+    Get_One_Order_Service,
+    Get_All_Order_Service
 }
