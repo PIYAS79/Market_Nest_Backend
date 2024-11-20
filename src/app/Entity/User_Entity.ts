@@ -9,7 +9,9 @@ export interface User_Entity_Type {
     image: string,
     email: string,
     password: string,
-    role:string
+    role: string,
+    contact_number: string,
+    address: string
 }
 
 export const User_Entity = new EntitySchema<User_Entity_Type>({
@@ -33,6 +35,12 @@ export const User_Entity = new EntitySchema<User_Entity_Type>({
             type: String
         },
         role: {
+            type: String
+        },
+        address: {
+            type: String
+        },
+        contact_number: {
             type: String
         }
     }

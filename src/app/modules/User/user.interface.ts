@@ -6,5 +6,7 @@ interface Create_User_Type {
     image: string,
     email: string,
     password: string,
-    role:string
+    role: string,
+    address: string,
+    contact_number: string
 }
