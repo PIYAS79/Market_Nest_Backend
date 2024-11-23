@@ -21,8 +21,8 @@ const Create_User_Service = async (data: Create_User_Type) => {
 
 const Update_User_Service = async (data: Partial<Create_User_Type>, uid: string) => {
 
-    if (data.role) {
-        data.role = "USER"
+    if (data.role==="ADMIN-X") {
+        data.role = "ADMIN"
     }
 
     const remainingProperties: Record<string, unknown> = { ...data };

@@ -1,0 +1,13 @@
+# ----------------------- FOR CLOUD ----------------------
+# DB_HOST=b8icybgqdhsh0kdewsw6-mysql.services.clever-cloud.com
+# DB_NAME=b8icybgqdhsh0kdewsw6
+# DB_USER=uacvt2s8c7wrlvmd
+# DB_PASSWORD=fHmwfHQ5AhAJzduF26EX
+# DB_PORT=3306
+
+# --------------------- FOR Localhost --------------------
+# DB_HOST=localhost
+# DB_NAME=marketnest
+# DB_USER=root
+# DB_PASSWORD=''
+# DB_PORT=3306
