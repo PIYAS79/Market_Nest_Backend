@@ -7,7 +7,6 @@ import { Order_Services } from "./order.services";
 const Create_Order_Controller = Async_Catch(async (req: Request, res: Response, next: NextFunction) => {
 
     const result = await Order_Services.Create_Order_Service(req.body);
-
     res.status(httpStatus.OK).json({
         success: true,
         message: "Successfully Create A Order",

@@ -11,6 +11,7 @@ let server: Server;
 async function main() {
 
     try {
+        // default super admin instance
         await db_connection;
         const entityManager = getManager();
         const isAdminExist = await entityManager.findOne(User_Entity, { where: { role: "ADMIN" } });
@@ -23,10 +24,11 @@ async function main() {
                 role: "ADMIN"
             })
         }
+        // server listen code
         server = app.listen(port, () => {
             console.log(`Server run on http://localhost:${port}`);
         })
-        
+
     } catch (err: any) {
         console.log(err);
     }

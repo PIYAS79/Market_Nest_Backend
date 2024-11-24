@@ -1,6 +1,4 @@
 
-
-
 import express from 'express';
 import { User_Routes } from '../modules/User/user.route';
 import { Product_Routes } from '../modules/Product/product.route';
