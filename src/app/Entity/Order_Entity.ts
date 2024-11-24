@@ -11,6 +11,8 @@ export interface Order_Entity_Type {
     user_id: number;
     order_status: boolean;
 }
+
+
 export const Order_Entity = new EntitySchema<Order_Entity_Type>({
     name: "Order",
     columns: {

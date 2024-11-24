@@ -32,7 +32,6 @@ const Create_Order_Service = async (data: Create_Order_Type) => {
         user_id: data.user_id,
         order_status: false
     })
-    console.log(newOrder)
 
     return newOrder;
 }

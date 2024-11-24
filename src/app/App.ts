@@ -43,10 +43,10 @@ export const db_connection = createConnection({
 // project routes
 app.use('/app/v1', router);
 
-
+app.use("*", Route_Not_Found_Error);
 
 // initial route
-app.use('/', (req: Request, res: Response, next: NextFunction) => {
+app.use('/', (req: Request, res: Response) => {
     res.status(httpStatus.OK).json({
         success: true,
         message: "Market Nest Server is running 🤩"
@@ -54,8 +54,7 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 })
 
 
-
-app.use("*", Route_Not_Found_Error);
+// global error handler 
 app.use(Global_Error_Handler);
 
 

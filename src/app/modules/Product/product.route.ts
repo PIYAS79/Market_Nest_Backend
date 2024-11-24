@@ -24,3 +24,4 @@ router.get('/:pid', Product_Controller.Get_One_Product_Controller);
 
 
 export const Product_Routes = router;
+
