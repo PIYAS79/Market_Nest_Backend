@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon dist/app/Server.js",
-    "lint": "eslint src/app --ignore-path .eslintignore --ext .ts",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint src/app --ignore-path .eslintignore --ext .ts"
   },
   "keywords": [],
   "author": "",
