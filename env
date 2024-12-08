@@ -1,4 +1,12 @@
-# ----------------------- FOR CLOUD ----------------------
+# ----------------------- FOR CLOUD (E-Chocolate) ----------------------
+# DB_HOST=b9gv5lqjw6kkedagt8rx-mysql.services.clever-cloud.com
+# DB_NAME=b9gv5lqjw6kkedagt8rx
+# DB_USER=uuiqekraofn7bwwr
+# DB_PASSWORD=gbgXeFcHzVsb5H7svMwT
+# DB_PORT=3306
+
+
+# ----------------------- FOR CLOUD (Market_Nest) ----------------------
 # DB_HOST=b8icybgqdhsh0kdewsw6-mysql.services.clever-cloud.com
 # DB_NAME=b8icybgqdhsh0kdewsw6
 # DB_USER=uacvt2s8c7wrlvmd
